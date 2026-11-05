@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "app/api/rooms/**/*.ts": {
+      "maxDuration": 10
+    }
+  }
+}
