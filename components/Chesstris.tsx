@@ -52,7 +52,11 @@ export default function Chesstris(){
   }
 
   async function join(){
-    const c=code.trim().toUpperCase(); if(!c)return;
+    const c=code.trim().toUpperCase();
+    if(!/^[A-Z0-9]{6}$/.test(c)){
+      setMessage("Enter a 6-character room code.");
+      return;
+    }
     setBusy(true);
     try{
       const r=await fetch(`/api/rooms/${c}`,{method:"POST",headers:{"Content-Type":"application/json"},
