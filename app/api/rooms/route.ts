@@ -1,10 +1,17 @@
-import { Redis } from "@upstash/redis";
 import { NextResponse } from "next/server";
 import { initialRoom } from "../../../lib/game";
+import { getRedisClient } from "../../../lib/redis";
 
-const redis = Redis.fromEnv();
+const redis = getRedisClient();
 
 export async function POST(req: Request) {
+  if (!redis) {
+    return NextResponse.json(
+      { error: "Room storage is not configured. Set UPSTASH_REDIS_REST_URL and UPSTASH_REDIS_REST_TOKEN." },
+      { status: 503 },
+    );
+  }
+
   const { playerId } = await req.json();
   if (!playerId) return NextResponse.json({ error: "playerId required" }, { status: 400 });
 

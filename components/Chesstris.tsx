@@ -122,7 +122,7 @@ export default function Chesstris(){
   }
 
   if(!room)return <main className="shell">
-    <header><div><div className="eyebrow">MISA MINO × TETRIO-STYLE INPUT</div><h1>CHESSTRIS</h1><p>Player 1 places, then Player 2 places.</p></div><Settings controls={controls} setControls={setControls}/></header>
+    <header><div><div className="eyebrow">TURN BASED TETRIS × MODERN RULES</div><h1>CHESSTRIS</h1><p>Modern tetris based upon strategy!</p></div><Settings controls={controls} setControls={setControls}/></header>
     <section className="lobby card">
       <h2>Online room</h2><p>Vercel hosts the app/API; Upstash Redis stores room state.</p>
       <div className="lobby-row"><button className="primary" disabled={busy} onClick={create}>Create room</button>
