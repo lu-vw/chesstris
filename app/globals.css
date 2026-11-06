@@ -234,37 +234,51 @@ input {
 
 .c1 {
   background: #48c9e8;
-  box-shadow: inset 0 0 0 2px #b7f3ff55;
+  border: 0;
+  border-radius: 1px;
 }
 
 .c2 {
   background: #f1d95c;
-  box-shadow: inset 0 0 0 2px #fff7b755;
+  border: 0;
+  border-radius: 1px;
 }
 
 .c3 {
   background: #a978e9;
-  box-shadow: inset 0 0 0 2px #e2cfff55;
+  border: 0;
+  border-radius: 1px;
 }
 
 .c4 {
   background: #65cf86;
-  box-shadow: inset 0 0 0 2px #baffca55;
+  border: 0;
+  border-radius: 1px;
 }
 
 .c5 {
   background: #e96873;
-  box-shadow: inset 0 0 0 2px #ffc2c655;
+  border: 0;
+  border-radius: 1px;
 }
 
 .c6 {
   background: #6688e8;
-  box-shadow: inset 0 0 0 2px #c1d0ff55;
+  border: 0;
+  border-radius: 1px;
 }
 
 .c7 {
   background: #e89b57;
-  box-shadow: inset 0 0 0 2px #ffd1a455;
+  border: 0;
+  border-radius: 1px;
+}
+
+.cell.ghost {
+  background: transparent;
+  border: 1px solid #e8f1ff99;
+  border-radius: 2px;
+  box-shadow: inset 0 0 0 1px #e8f1ff33;
 }
 
 .center {
@@ -284,31 +298,75 @@ input {
   background: #0a1220;
 }
 
-.queue {
-  margin: 18px 0;
-  display: flex;
-  gap: 6px;
-  align-items: center;
-  flex-wrap: wrap;
+.piece-queue {
+  margin: 14px auto 0;
+  max-width: 330px;
+  padding: 10px 12px;
+  border: 1px solid #26344a;
+  border-radius: 10px;
+  background: #080f1c;
 }
 
-.queue span {
+.piece-queue h3 {
+  margin: 0 0 8px;
   font-size: 10px;
   color: var(--muted);
   font-weight: 800;
   letter-spacing: 0.12em;
-  margin-right: 4px;
 }
 
-.queue b {
+.piece-queue ol {
   display: grid;
-  place-items: center;
-  width: 36px;
-  height: 36px;
-  border: 1px solid #34445f;
-  border-radius: 7px;
-  background: #0a111d;
-  font-size: 11px;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.piece-queue li {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 29px;
+}
+
+.queue-number,
+.piece-name {
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.queue-number {
+  width: 12px;
+}
+
+.piece-preview {
+  display: grid;
+  grid-template-columns: repeat(4, 6px);
+  grid-template-rows: repeat(4, 6px);
+  gap: 1px;
+}
+
+.piece-preview i {
+  display: block;
+  background: transparent;
+  border-radius: 1px;
+}
+
+.piece-preview i.c1,
+.piece-preview i.c2,
+.piece-preview i.c3,
+.piece-preview i.c4,
+.piece-preview i.c5,
+.piece-preview i.c6,
+.piece-preview i.c7 {
+  border: 0;
+  border-radius: 1px;
+}
+
+.piece-name {
+  color: var(--text);
 }
 
 .lock {
